@@ -34,7 +34,7 @@ jobs:
       - name: Run Tests
         run: |
           mkdir -p test_reports
-          python -m unittest discover -s unit_tests > test_reports/test_reports.txt
+          python -m unittest discover -s unit_tests -v > test_reports/test_reports.txt 2>&1
           exit_code=$?
           echo "Exit code: $exit_code"
           exit $exit_code
