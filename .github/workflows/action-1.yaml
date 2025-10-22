@@ -32,4 +32,15 @@ jobs:
           python-version: '3.11'
 
       - name: Run Tests
-        run: python -m unittest discover -s unit_tests
+        run: |
+          mkdir -p test_reports
+          python -m unittest discover -s unit_tests > test_reports/test_reports.txt
+          exit_code=$?
+          echo "Exit code: $exit_code"
+          exit $exit_code
+
+      - name: Upload Test Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: test_report
+          path: test_report/test_report.txt
