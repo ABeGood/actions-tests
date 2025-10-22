@@ -23,6 +23,13 @@ jobs:
     needs: build
 
     steps:
-      - name: Run Tests
+      - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Setup Python for Tests
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run Tests
         run: python -m unittest discover
