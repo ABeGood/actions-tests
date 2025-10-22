@@ -17,3 +17,7 @@ jobs:
 
       - name: Run
         run: python main.py
+
+      - name: Unit Tests
+        needs: Run
+        run: python -m unittest discover
