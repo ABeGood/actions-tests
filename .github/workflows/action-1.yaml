@@ -16,4 +16,4 @@ jobs:
           python-version: '3.11'
 
       - name: Run
-        run: main.py
+        run: python main.py
