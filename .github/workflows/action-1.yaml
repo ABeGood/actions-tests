@@ -18,11 +18,11 @@ jobs:
       - name: Run
         run: python main.py
 
-    test: 
-      runs-on: ubuntu-latest
-      needs: build
+  test: 
+    runs-on: ubuntu-latest
+    needs: build
 
-      steps:
-        - name: Run Tests
-          uses: actions/checkout@v4
-          run: python -m unittest discover
+    steps:
+      - name: Run Tests
+        uses: actions/checkout@v4
+        run: python -m unittest discover
